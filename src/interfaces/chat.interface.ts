@@ -1,6 +1,6 @@
 import mongoose, { ObjectId } from 'mongoose';
 import { IOffer } from './order.interface';
-import { IContractorGig } from './gig.interface';
+import { IContractorService } from './service.interface';
 import { IContractorDocument } from './contractor.interface';
 
 export interface IConversationDocument extends Document {
@@ -19,7 +19,7 @@ export interface IMessageDocument {
   fileType?: string;
   fileSize?: string;
   fileName?: string;
-  gigId?: string;
+  serviceId?: string;
   contractorId?: string;
   customerId?: string;
   senderUsername?: string;
@@ -48,7 +48,7 @@ export interface IMessageDetails {
 export interface IChatBoxProps {
   contractor: IChatContractorProps;
   customer: IChatCustomerProps
-  gigId: string;
+  serviceId: string;
   onClose: () => void;
 }
 
@@ -68,5 +68,5 @@ export interface IChatCustomerProps {
 export interface IChatMessageProps {
   message: IMessageDocument;
   contractor?: IContractorDocument;
-  gig?: IContractorGig;
+  service?: IContractorService;
 }

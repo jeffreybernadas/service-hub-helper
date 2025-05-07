@@ -16,7 +16,7 @@ export const verifyGatewayRequest = (jwtSecret: string) => {
   const validServiceTokens: string[] = [
     "auth",
     "contractor",
-    "gig",
+    "service",
     "search",
     "customer",
     "message",

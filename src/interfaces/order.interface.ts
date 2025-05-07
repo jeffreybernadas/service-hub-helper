@@ -1,7 +1,7 @@
 
 export interface IOffer {
   [key: string]: string | number | boolean | undefined;
-  gigTitle: string;
+  serviceTitle: string;
   price: number;
   description: string;
   deliveryInDays: number;
@@ -50,7 +50,7 @@ export interface IOrderMessage {
   ongoingJobs?: number;
   completedJobs?: number;
   totalEarnings?: number;
-  purchasedGigs?: string;
+  purchasedServices?: string;
   recentDelivery?: string;
   type?: string;
   receiverEmail?: string;
@@ -81,15 +81,15 @@ export interface IOrderMessage {
 
 export interface IOrderDocument {
   offer: IOffer;
-  gigId: string;
+  serviceId: string;
   contractorId: string;
   contractorUsername: string;
   contractorImage: string;
   contractorEmail: string;
-  gigCoverImage: string;
-  gigMainTitle: string;
-  gigBasicTitle: string;
-  gigBasicDescription: string;
+  serviceCoverImage: string;
+  serviceMainTitle: string;
+  serviceBasicTitle: string;
+  serviceBasicDescription: string;
   customerId: string;
   customerUsername: string;
   customerEmail: string;

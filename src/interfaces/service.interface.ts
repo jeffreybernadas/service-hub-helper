@@ -2,9 +2,9 @@ import { ObjectId } from "mongoose";
 import { IRatingCategories, IReviewDocument } from "./review.interface";
 import { IContractorDocument } from "./contractor.interface";
 
-export type GigType = string | string[] | number | unknown | undefined;
+export type ServiceType = string | string[] | number | unknown | undefined;
 
-export interface ICreateGig extends Record<string, GigType> {
+export interface ICreateService extends Record<string, ServiceType> {
   // [key: string]: string | string[] | number | undefined;
   contractorId?: string;
   profilePicture?: string;
@@ -20,7 +20,7 @@ export interface ICreateGig extends Record<string, GigType> {
   basicDescription: string;
 }
 
-export interface IContractorGig {
+export interface IContractorService {
   _id?: string | ObjectId;
   // this "id" property is used because elasticsearch does not accept a key with an underscore "_id"
   // elasticsearch has _id as a reserved field name
@@ -52,20 +52,20 @@ export interface IContractorGig {
   toJSON?: () => unknown;
 }
 
-export interface IGigContext {
-  gig: IContractorGig;
+export interface IServiceContext {
+  service: IContractorService;
   contractor: IContractorDocument;
   isSuccess?: boolean;
   isLoading?: boolean;
 }
 
-export interface IGigsProps {
+export interface IServicesProps {
   type?: string;
-  gig?: IContractorGig;
+  service?: IContractorService;
 }
 
-export interface IGigCardItems {
-  gig: IContractorGig;
+export interface IServiceCardItems {
+  service: IContractorService;
   linkTarget: boolean;
   showEditIcon: boolean;
 }
@@ -75,19 +75,19 @@ export interface ISelectedBudget {
   maxPrice: string;
 }
 
-export interface IGigViewReviewsProps {
+export interface IServiceViewReviewsProps {
   showRatings: boolean;
   reviews?: IReviewDocument[];
 }
 
-export interface IGigInfo {
+export interface IServiceInfo {
   total: number | string;
   title: string;
   bgColor: string;
 }
 
-export interface IGigTopProps {
-  gigs: IContractorGig[];
+export interface IServiceTopProps {
+  services: IContractorService[];
   title?: string;
   subTitle?: string;
   category?: string;

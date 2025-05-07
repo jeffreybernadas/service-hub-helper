@@ -82,7 +82,7 @@ export interface IContractorDocument extends Record<string, ContractorType> {
   completedJobs?: number;
   cancelledJobs?: number;
   totalEarnings?: number;
-  totalGigs?: number;
+  totalServices?: number;
   paypal?: string; // not needed
   createdAt?: Date | string;
 }

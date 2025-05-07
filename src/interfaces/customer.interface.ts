@@ -7,7 +7,7 @@ export interface ICustomerDocument {
   profilePicture?: string;
   country: string;
   isContractor?: boolean;
-  purchasedGigs: string[];
+  purchasedServices: string[];
   createdAt?: Date | string;
   updatedAt?: Date | string;
 }

@@ -1,5 +1,5 @@
 export interface IReviewMessageDetails {
-  gigId?: string;
+  serviceId?: string;
   reviewerId?: string;
   contractorId?: string;
   review?: string;
@@ -15,7 +15,7 @@ export interface IRatingTypes {
 
 export interface IReviewDocument {
   _id?: string;
-  gigId: string;
+  serviceId: string;
   reviewerId: string;
   contractorId: string;
   review: string;

@@ -33,17 +33,17 @@ export {
 export { IEmailLocals } from "./interfaces/email.interface";
 
 export {
-  GigType,
-  ICreateGig,
-  IContractorGig,
-  IGigContext,
-  IGigsProps,
-  IGigCardItems,
+  ServiceType,
+  ICreateService,
+  IContractorService,
+  IServiceContext,
+  IServicesProps,
+  IServiceCardItems,
   ISelectedBudget,
-  IGigViewReviewsProps,
-  IGigInfo,
-  IGigTopProps,
-} from "./interfaces/gig.interface";
+  IServiceViewReviewsProps,
+  IServiceInfo,
+  IServiceTopProps,
+} from "./interfaces/service.interface";
 
 export {
   IOffer,
