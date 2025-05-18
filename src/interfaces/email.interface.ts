@@ -6,8 +6,8 @@ export interface IEmailLocals {
   amount?: string; // Amount of an order
   customerUsername?: string; // Customer username for the email
   contractorUsername?: string; // Contractor username for the email
-  title?: string; // Title of the email
-  description?: string; // Description of the email
+  title?: string; // Title of the service
+  description?: string; // Description of the service
   deliveryDays?: string; // Delivery days for the order
   orderId?: string; // Order id for the order
   orderDue?: string; // Order due date for the order
@@ -18,8 +18,8 @@ export interface IEmailLocals {
   reason?: string; // Reason for the extension of the order (if grace is given)
   subject?: string; // Subject for the email
   header?: string; // Header for the email
-  type?: string; // Type of the email
-  message?: string; // Message for the email
+  type?: string; // Type of the extension (approved or rejected)
+  message?: string; // Message of the customer regarding the extension
   serviceFee?: string; // Service fee for the order
   total?: string; // Total amount for the order
   username?: string; // Username for the email
