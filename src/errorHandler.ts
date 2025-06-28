@@ -1,6 +1,18 @@
 import { NextFunction, Request, Response } from "express";
-import { INTERNAL_SERVER_ERROR } from "./constants/http.constants";
+import { z, ZodError, ZodIssue } from "zod";
+import { BAD_REQUEST, INTERNAL_SERVER_ERROR } from "./constants/http.constants";
 import { AppError } from "./utils/AppError.utils";
+
+const handleZodError = (res: Response, error: ZodError) => {
+  const errors = error.issues.map((err: ZodIssue) => ({
+    path: err.path.join("."),
+    message: err.message,
+  }));
+  return res.status(BAD_REQUEST).json({
+    message: "Bad Request.",
+    errors,
+  });
+};
 
 // Handles AppError which was extended from built-in Error class
 const handleAppError = (res: Response, error: AppError) => {
@@ -19,8 +31,12 @@ export const errorHandler = (
   res: Response,
   _next: NextFunction
 ) => {
+  if (error instanceof z.ZodError) {
+    handleZodError(res, error);
+  }
+
   if (error instanceof AppError) {
-    return handleAppError(res, error);
+    handleAppError(res, error);
   }
 
   return res.status(INTERNAL_SERVER_ERROR).json({

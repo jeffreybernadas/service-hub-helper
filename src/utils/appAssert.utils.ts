@@ -13,6 +13,12 @@ type AppAssert = (
 ) => asserts condition;
 /**
  * Asserts a condition and throws an AppError if the condition is falsy.
+ * @param condition - The condition to assert.
+ * @param httpStatusCode - The HTTP status code.
+ * @param message - The message of the error.
+ * @param service - The service name.
+ * @param status - The status of the error.
+ * @param appErrorCode - The Custom App Error Code. - `Invalid_Access_Token`, `Insufficient_Role`, `Invalid_Login_Method`
  */
 export const appAssert: AppAssert = (
   condition,
