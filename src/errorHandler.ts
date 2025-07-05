@@ -32,15 +32,15 @@ export const errorHandler = (
   _next: NextFunction
 ) => {
   if (error instanceof z.ZodError) {
-    handleZodError(res, error);
+    return handleZodError(res, error);
   }
 
   if (error instanceof AppError) {
-    handleAppError(res, error);
+    return handleAppError(res, error);
   }
 
   return res.status(INTERNAL_SERVER_ERROR).json({
     message: "Something went wrong.",
-    error: process.env.NODE_ENV === "development" ? error.message : undefined,
+    error: error.message,
   });
 };

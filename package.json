@@ -1,7 +1,7 @@
 {
   "name": "@jeffreybernadas/service-hub-helper",
   "author": "Jeffrey Bernadas",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Helper library of my microservice app called 'Service Hub'.",
   "license": "MIT",
   "main": "index.js",
