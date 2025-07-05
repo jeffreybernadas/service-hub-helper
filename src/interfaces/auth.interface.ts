@@ -31,6 +31,10 @@ export interface IAuthDocument {
   profilePicture?: string;
   emailVerified?: number;
   emailVerificationToken?: string;
+  browserName?: string;
+  deviceType?: string;
+  otp?: string;
+  otpExpiration?: Date;
   createdAt?: Date;
   updatedAt?: Date;
   passwordResetToken?: string;
